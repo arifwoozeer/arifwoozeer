@@ -63,35 +63,23 @@
             margin: 0 0 20px;
             color: #333;
         }
-        .method {
-            margin: 28px 0 0;
-            padding: 20px 24px;
-            background-color: #fafafa;
-            border-left: 2px solid #000000;
-        }
-        .method-label {
-            font-size: 0.8em;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: #888;
-            margin: 0 0 10px;
-        }
-        .method p {
-            margin: 0 0 10px;
-            font-size: 0.95em;
-        }
-        .method p:last-child {
-            margin: 0;
-        }
-        .method .kicker {
-            color: #000000;
-        }
-        .research-links {
-            font-size: 0.9em;
-            color: #555;
-            margin: 24px 0 0;
-            padding-top: 16px;
+        .project {
+            margin: 32px 0 0;
+            padding-top: 24px;
             border-top: 1px solid #eee;
+        }
+        .project h3 {
+            margin: 0 0 6px;
+        }
+        .project-meta {
+            font-size: 0.8em;
+            letter-spacing: 0.02em;
+            color: #888;
+            margin: 0 0 12px;
+        }
+        .project p {
+            margin: 0;
+            color: #333;
         }
     </style>
 </head>
@@ -112,24 +100,25 @@
         <h2>Research</h2>
 
         <div class="research-prose">
-            <p>None of this started as research. It started in the police, during national service, attending situations I wasn't trained for — mental health crises, attempted suicides, people at the worst point of their lives. What stayed with me afterwards wasn't the procedure. It was a plainer thing: the wish to be part of the solution, not the person who arrives after it has already broken.</p>
+            <p>I'm interested in what happens when a chatbot is told to behave one way but tends to behave another, particularly when the person using it is in distress. Much of the work in this area treats the system prompt or protocol as the thing that determines behaviour. I'm interested in what the model brings to the interaction before anyone writes an instruction for it.</p>
 
-            <p>"Wait — you're not Indian?" I got that question a lot: a Mauritian in a country that files everyone under Chinese, Malay, Indian, or <a href="https://drive.google.com/file/d/1A1Sj1eE_Ru7KJR8cX_MTGs9v-IEexQfF/view?usp=sharing" target="_blank">Other — the box that means none of the above</a>. That box is not a neutral administrative label; it shapes where you are allowed to live and what people decide about you before you have said anything. It is where I first learned what it costs to be the person a system has no category for. Kura came out of the same instinct, pointed at a different gap: five years building something for young people slipping through the cracks — $50K raised, 2,500 users, pilots with NUS and Duke-NUS. <a href="blog/solution-stopped-being-the-point/">Closing it taught me more than shipping it did</a> — that a product was never the right shape for the problem I was pointing at, and that belonging is not something an app hands you.</p>
-
-            <p>If the tool was not the answer, then the real question was about the systems the tool sits inside — who they are built for, and what happens to everyone else. That is what widened at <a href="https://reachalliance.org/case-study/how-can-we-utilise-conversational-a-i-to-enhance-financial-literacy-for-migrant-workers-in-singapore/#article" target="_blank">Reach Alliance</a>: building conversational AI for migrant workers' financial literacy, I kept running into the same thing — a system can work exactly as specified and still fail the person it was never designed for. When it does, the question is not technical. It is what recourse that person actually has. That one still pulls me across legal philosophy, <a href="blog/wrong-about-economics/">economics</a>, and AI governance, and I do not have a clean answer to it.</p>
-
-            <p>Then I went back to sitting with distress directly, as a peer listener — and that pulled me into <a href="blog/otr-copilot/">OTR Copilot</a>, an attempt to build AI that supports the people doing the listening. Building it surfaced the question underneath all the others. The natural-language part was easy; the hard part was whose emotional expression the system was built to read, and whose it wasn't — and <a href="https://drive.google.com/file/d/195DYnmsYCal5NCDWHnWB2s_-hHUeLXV4/view?usp=sharing" target="_blank">what we are really doing when we ask people to bring distress to a machine at all</a>.</p>
-
-            <p>That is where the current work lives. When an AI chatbot responds to someone in distress, is that coming from what it was told to do, or from something the model already leans toward? Most mental-health chatbots assume a system prompt is enough to specify behaviour. I'm testing whether that holds: do GPT-4o, Gemini, and Claude carry different built-in leanings — toward giving advice, toward one culture's idea of "moving on," toward resolving distress rather than sitting with it — and can those leanings override an explicit instruction once a user pushes? You can measure this. Give a model a protocol ("just listen, don't advise"), then apply escalating pressure and mark the exact turn it breaks. If defaults can override instructions, "safe deployment" means something other than what the field assumes.</p>
-
-            <p>It is the same question I started with on those call-outs, really, just moved as far upstream as it goes — from who shows up after a system fails someone, to whose distress the system was ever built to recognise in the first place. It is the work I'm taking to AMIA 2026, and to UCL BCC.</p>
-
-            <div class="method">
-                <p class="method-label">How I'm testing it — AMIA 2026</p>
-                <p>Five axes of therapeutic disposition, each grounded in an established clinical or philosophical framework (person-centred vs. problem-solving, non-directive vs. structured, individualist vs. collectivist framing, and so on). A scenario battery run at fixed settings across all three models gives each one a disposition profile. Then a graded-pressure protocol measures the <em>resistance threshold</em> — the point under escalating user pushback at which a model abandons its instructions — and asks whether disposition predicts that break.</p>
-                <p><span class="kicker">The instrument is the point, not the numbers.</span> Specific model versions deprecate; the finding ages within a generation. What lasts is a released, versioned audit anyone can run against any future model before deploying it. Don't cite my numbers — run the audit on your own model.</p>
+            <div class="project">
+                <h3>Therapeutic priors in frontier language models</h3>
+                <p class="project-meta">In progress &middot; Pilot &middot; Solo-authored</p>
+                <p>I test frontier models across a set of therapeutic dispositions, then introduce increasing user pressure while holding the original instruction constant. If a model is told to listen without giving advice, I want to find the point at which it starts giving advice anyway, and whether its baseline tendencies predict when that happens. Eventually I'd like to turn the method into a versioned audit that can be rerun as models change, with a second stage testing whether those tendencies can be shifted at all.</p>
             </div>
 
+            <div class="project">
+                <h3>OTR Copilot</h3>
+                <p class="project-meta">Poster accepted, AMIA 2026 &middot; Presented, UCL Behaviour Change Conference 2026 &middot; <a href="assets/pdf/otr-bcconf-poster.pdf" target="_blank">poster</a></p>
+                <p>An AI-augmented tool for peer mentors at Over The Rainbow, built as my Affective Computing capstone. It looked at what a machine can usefully do around a peer relationship without getting in the middle of it.</p>
+            </div>
+
+            <div class="project">
+                <h3>Multilingual conversational AI and migrant worker financial literacy</h3>
+                <p class="project-meta">Reach Alliance &middot; Completed &middot; <a href="https://reachalliance.org/case-study/how-can-we-utilise-conversational-a-i-to-enhance-financial-literacy-for-migrant-workers-in-singapore/#article" target="_blank">report</a></p>
+                <p>IRB-approved participatory research on how language shapes financial decision-making among migrant workers.</p>
+            </div>
         </div>
     </div>
 </body>
