@@ -42,7 +42,7 @@ Optional but recommended:
 In `research.html` (line 144) and `otr-copilot.html`, update:
 
 - [ ] **Demo video URL**: Replace `https://youtu.be/demo-link` with your actual YouTube link
-- [ ] Verify **GitHub repository link**: `https://github.com/wooziecodes/otr-copilot` is correct
+- [ ] Verify **GitHub repository link**: `https://github.com/arifwoozeer/otr-copilot` is correct
 
 ### 4. Uncomment Image Tags
 
@@ -98,7 +98,7 @@ git push origin main
 
 - [ ] Commit and push changes
 - [ ] Wait 2-5 minutes for GitHub Pages to rebuild
-- [ ] Visit `https://wooziecodes.github.io/otr-copilot.html`
+- [ ] Visit `https://arifwoozeer.github.io/otr-copilot.html`
 - [ ] Verify everything works live
 
 ### 7. Final Quality Checks

@@ -1,3 +1,3 @@
-# wooziecodes.io
+# arifwoozeer.io
 
-#https://wooziecodes.github.io/wooziecodes.io/
+#https://arifwoozeer.github.io/arifwoozeer.io/
