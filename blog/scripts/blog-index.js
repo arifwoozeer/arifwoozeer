@@ -66,13 +66,12 @@
     function renderFeaturedPost(post) {
         const url = getPostUrl(post);
         const attrs = getLinkAttrs(post);
-        const readingTime = post.readingTime ? ` · ${post.readingTime} min read` : '';
 
         return `
             <div class="featured-post">
                 <h4><a href="${url}" ${attrs}>${post.title}</a></h4>
                 ${post.excerpt ? `<p class="featured-excerpt">${post.excerpt}</p>` : ''}
-                <p class="featured-meta">${formatDate(post.date)}${readingTime}</p>
+                <p class="featured-meta">${formatDate(post.date)}</p>
             </div>
         `;
     }
@@ -81,12 +80,11 @@
     function renderPostRow(post) {
         const url = getPostUrl(post);
         const attrs = getLinkAttrs(post);
-        const readingTime = post.readingTime ? ` · ${post.readingTime} min` : '';
 
         return `
             <li>
                 <a href="${url}" ${attrs}>${post.title}</a>
-                <span class="post-meta-inline"> · ${formatDate(post.date)}${readingTime}</span>
+                <span class="post-meta-inline"> · ${formatDate(post.date)}</span>
             </li>
         `;
     }
